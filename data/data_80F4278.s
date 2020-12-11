@@ -2223,11 +2223,53 @@ gMenuQuestionMarks: @ 80F7F6C
 
 	.global gUnknown_80F7F70
 gUnknown_80F7F70: @ 80F7F70
-	.incbin "baserom.gba", 0xF7F70, 0x194
+	.4byte gDungeonStairsDescription
+	.4byte gWarpZoneDescription
+	.4byte gRescueSpotDescription
+
+	.global gRescueSpotDescription
+gRescueSpotDescription: @ 80F7F7C
+	.string "You reached the rescue spot where your\n"
+	.string "friend~27s team went down!\n"
+	.string "Send an #c2A-OK Mail#r from the Pelipper Post\n"
+	.string "Office to let your friend know you~27ve\n"
+	.asciz "rescued the defeated team."
+	.align 2,0
+
+	.global gWarpZoneDescription
+gWarpZoneDescription: @ 80F8030
+	.string "The warp zone leading to the next floor.\n"
+	.string "If you are on the final floor~2c you will\n"
+	.asciz "escape from the dungeon."
+	.align 2,0
+
+	.global gDungeonStairsDescription
+gDungeonStairsDescription: @ 80F809C
+	.string "Stairs leading to the next floor.\n"
+	.string "If you are on the final floor~2c you will\n"
+	.asciz "escape from the dungeon."
+	.align 2,0
 
 	.global gUnknown_80F8104
 gUnknown_80F8104: @ 80F8104
-	.incbin "baserom.gba", 0xF8104, 0x2C
+	.4byte gDungeonStairsText
+	.4byte gWarpZoneText
+	.4byte gRescueSpotText
+
+	.global gRescueSpotText
+gRescueSpotText: @ 80F7F7C
+	.asciz "Rescue Spot"
+	.align 2,0
+
+	.global gWarpZoneText
+gWarpZoneText: @ 80F8030
+	.asciz "Warp Zone"
+	.align 2,0
+
+	.global gDungeonStairsText
+gDungeonStairsText: @ 80F809C
+	.asciz "Stairs"
+	.align 2,0
 
 	.global gTrapDescriptions
 gTrapDescriptions: @ 80F8130
