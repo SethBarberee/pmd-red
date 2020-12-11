@@ -2,11 +2,11 @@ gUnknown_80DCA34:: @ 80DCA34
 	.string "#+...#WA voice emanates from somewhere...#P"
 	.string "#+...Ye who seek awakening...#P"
 	.string "#+This is Luminous Cave.#W\n"
-	.asciz "#+Do ye seek a new evolution?"
+	.string "#+Do ye seek a new evolution?\0"
 	.align 2, 0
 
 gUnknown_80DCAB8:: @ 80DCAB8
-	.asciz "#+Do ye seek evolution?"
+	.string "#+Do ye seek evolution?\0"
 	.align 2, 0
 
 gUnknown_80DCAD0:: @ 80DCAD0
@@ -28,92 +28,92 @@ gUnknown_80DCAD0:: @ 80DCAD0
 	.string "#+Once it has evolved~2c a Pokémon\n"
 	.string "#+can never regain its previous form.#P"
 	.string "#+That is why ye must think carefully\n"
-	.asciz "#+before committing to evolution."
+	.string "#+before committing to evolution.\0"
 	.align 2, 0
 
 gUnknown_80DCD5C:: @ 80DCD5C
 	.string "#+Ye shall return if evolution\n"
-	.asciz "#+is what ye seek..."
+	.string "#+is what ye seek...\0"
 	.align 2, 0
 
 gUnknown_80DCD90:: @ 80DCD90
-	.asciz "#+Will ye give an item for evolution?"
+	.string "#+Will ye give an item for evolution?\0"
 	.align 2, 0
 
 gUnknown_80DCDB8:: @ 80DCDB8
-	.asciz "#+Will ye give yet another item?"
+	.string "#+Will ye give yet another item?\0"
 	.align 2, 0
 
 gUnknown_80DCDDC:: @ 80DCDDC
 	.string "#+Alas~2c ye seem to lack what is needed\n"
-	.asciz "#+for evolution."
+	.string "#+for evolution.\0"
 	.align 2, 0
 
 gUnknown_80DCE18:: @ 80DCE18
-	.asciz "#+Ye seem to have but one item."
+	.string "#+Ye seem to have but one item.\0"
 	.align 2, 0
 
 gUnknown_80DCE38:: @ 80DCE38
 	.string "#+...Ye who seek awakening...\n"
-	.asciz "#+Let us begin."
+	.string "#+Let us begin.\0"
 	.align 2, 0
 
 gUnknown_80DCE68:: @ 80DCE68
 	.string "#+...#W$n0 is undergoing changes...#P"
-	.asciz "#+$n0~27s appearance changed...#P"
+	.string "#+$n0~27s appearance changed...#P\0"
 	.align 2, 0
 
 gUnknown_80DCEB0:: @ 80DCEB0
 	.string "#+It evolved from #C4$m0#R\n"
-	.asciz "#+to #C6$m1#R!"
+	.string "#+to #C6$m1#R!\0"
 	.align 2, 0
 
 gUnknown_80DCEDC:: @ 80DCEDC
 	.string "#+...#P"
 	.string "#+One cannot evolve if one\n"
 	.string "#+is in the company of others.#P"
-	.asciz "#+Come alone if ye wish to evolve."
+	.string "#+Come alone if ye wish to evolve.\0"
 	.align 2, 0
 
 gUnknown_80DCF44:: @ 80DCF44
 	.string "#+...#P"
 	.string "#+Ye cannot evolve yet.#P"
-	.asciz "#+Ye have not high enough a level."
+	.string "#+Ye have not high enough a level.\0"
 	.align 2, 0
 
 gUnknown_80DCF88:: @ 80DCF88
 	.string "#+...#P"
-	.asciz "#+Ye cannot evolve anymore."
+	.string "#+Ye cannot evolve anymore.\0"
 	.align 2, 0
 
 gUnknown_80DCFAC:: @ 80DCFAC
 	.string "#+...#P"
 	.string "#+Ye cannot evolve yet.#P"
-	.asciz "#+Ye need your Friend Area to evolve."
+	.string "#+Ye need your Friend Area to evolve.\0"
 	.align 2, 0
 
 gUnknown_80DCFF4:: @ 80DCFF4
 	.string "#+...#P"
 	.string "#+Ye cannot evolve yet.#P"
 	.string "#+The Friend Area to which ye shall go\n"
-	.asciz "#+has no room for ye."
+	.string "#+has no room for ye.\0"
 	.align 2, 0
 
 gUnknown_80DD054:: @ 80DD054
 	.string "#+...#P"
 	.string "#+Ye cannot evolve yet.#P"
-	.asciz "#+Ye seem to lack the IQ to evolve."
+	.string "#+Ye seem to lack the IQ to evolve.\0"
 	.align 2, 0
 
 gUnknown_80DD098:: @ 80DD098
 	.string "#+#+...#P"
 	.string "#+Ye cannot evolve yet.#P"
-	.asciz "#+Ye seem to lack an item to evolve."
+	.string "#+Ye seem to lack an item to evolve.\0"
 	.align 2, 0
 
 gUnknown_80DD0E0:: @ 80DD0E0
 	.string "#+#+...#P"
-	.asciz "#+Ye cannot evolve yet. "
+	.string "#+Ye cannot evolve yet. \0"
 	.align 2, 0
 
 gUnknown_80DD104:: @ 80DD104
@@ -121,8 +121,8 @@ gUnknown_80DD104:: @ 80DD104
 	.string "#+the evolved Pokémon. \0"
 	.align 2, 0
 
-	.asciz "pksdir0"
+	.string "pksdir0\0"
 	.align 2, 0
 
-	.asciz "pksdir0"
+	.string "pksdir0\0"
 	.align 2, 0

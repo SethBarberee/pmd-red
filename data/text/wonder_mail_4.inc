@@ -1,6 +1,6 @@
 gUnknown_80E0C4C:: @ 80E0C4C
 	.string " So~2c what~27d you want to\n"
-	.asciz "know?"
+	.string "know?\0"
 	.align 2, 0
 
 gUnknown_80E0C70:: @ 80E0C70
@@ -15,7 +15,7 @@ gUnknown_80E0C70:: @ 80E0C70
 	.string "can continue from where it went down.#P"
 	.string " Make sure you send your\n"
 	.string "friend a #CGThank-You Mail#R.\n"
-	.asciz "That~27s if you get revived~2c of course."
+	.string "That~27s if you get revived~2c of course.\0"
 	.align 2, 0
 
 gUnknown_80E0DD0:: @ 80E0DD0
@@ -27,7 +27,7 @@ gUnknown_80E0DD0:: @ 80E0DD0
 	.string "in certain places.#P"
 	.string " If you need to send\n"
 	.string "an #CGSOS Mail#R~2c you send it from the\n"
-	.asciz "#CGmain menu#R."
+	.string "#CGmain menu#R.\0"
 	.align 2, 0
 	
 gUnknown_80E0ED8:: @ 80E0ED8
@@ -45,7 +45,7 @@ gUnknown_80E0ED8:: @ 80E0ED8
 	.string "any item it happens to be holding.#P"
 	.string " You can receive that\n"
 	.string "team-saving #CGA-OK Mail#R on the #CGmain menu#R~2c\n"
-	.asciz "all right?"
+	.string "all right?\0"
 	.align 2, 0
 
 gUnknown_80E10C8:: @ 80E10C8
@@ -59,7 +59,7 @@ gUnknown_80E10C8:: @ 80E10C8
 	.string "storage to your #CGThank-You Mail#R\n"
 	.string "as a #CGreward item#R.#P"
 	.string " You don~27t want to ever\n"
-	.asciz "forget to express your thanks."
+	.string "forget to express your thanks.\0"
 	.align 2, 0
 
 gUnknown_80E120C:: @ 80E120C
@@ -74,7 +74,7 @@ gUnknown_80E120C:: @ 80E120C
 	.string "an #CGA-OK Mail#R.#P"
 	.string " After you do that~2c your\n"
 	.string "friend can send back to you\n"
-	.asciz "a #CGThank-You Mail#R."
+	.string "a #CGThank-You Mail#R.\0"
 	.align 2, 0
 
 gUnknown_80E136C:: @ 80E136C
@@ -83,7 +83,7 @@ gUnknown_80E136C:: @ 80E136C
 	.string "#CGSOS Mail#R.#P"
 	.string " You do that at\n"
 	.string "the #CGleft counter#R over there~2c\n"
-	.asciz "or by selecting it from the #CGmain menu#R."
+	.string "or by selecting it from the #CGmain menu#R.\0"
 	.align 2, 0
 
 gUnknown_80E1420:: @ 80E1420
@@ -98,7 +98,7 @@ gUnknown_80E1420:: @ 80E1420
 	.string "Areas using a #CGGame Link cable#R.#P"
 	.string " This Pokémon won~27t\n"
 	.string "disappear from its Friend Area~2c so\n"
-	.asciz "don~27t you worry any."
+	.string "don~27t you worry any.\0"
 	.align 2, 0
 
 gUnknown_80E157C:: @ 80E157C
@@ -110,7 +110,7 @@ gUnknown_80E157C:: @ 80E157C
 	.string "if you can~27t get into it.#P"
 	.string " You~27ll be able to get\n"
 	.string "there when you go farther in your\n"
-	.asciz "adventure~2c so it won~27t do to fret."
+	.string "adventure~2c so it won~27t do to fret.\0"
 	.align 2, 0
 
 gUnknown_80E169C:: @ 80E169C
@@ -122,18 +122,18 @@ gUnknown_80E169C:: @ 80E169C
 	.string "or on the #CGmain menu#R.#P"
 	.string " But you need to #C2be careful#R.\n"
 	.string "You #C2must not delete the A-OK Mail#R\n"
-	.asciz "before you get the #CGThank-You Mail#R back."
+	.string "before you get the #CGThank-You Mail#R back.\0"
 	.align 2, 0
 
 gUnknown_80E17C8:: @ 80E17C8
 	.string " I~27m your guide to what you\n"
 	.string "can expect at the Pelipper Post Office.\n"
-	.asciz "If you have any questions~2c just ask away!"
+	.string "If you have any questions~2c just ask away!\0"
 	.align 2, 0
 
 gUnknown_80E183C:: @ 80E183C
 	.string " Did you want to ask about\n"
-	.asciz "anything else?"
+	.string "anything else?\0"
 	.align 2, 0
 
 gUnknown_80E1868:: @ 80E1868
@@ -151,7 +151,7 @@ gUnknown_80E1868:: @ 80E1868
 	.string "missions at that counter there.#P"
 	.string " The #CGleft counter#R is\n"
 	.string "for rescues~2c and the #CGright counter#R\n"
-	.asciz "is for Thank-You Mail."
+	.string "is for Thank-You Mail.\0"
 	.align 2, 0
 
 gUnknown_80E1A30:: @ 80E1A30
@@ -168,7 +168,7 @@ gUnknown_80E1AD8:: @ 80E1AD8
 	.string "expect to get rescue requests directly.#P"
 	.string " Our delivery $m0\n"
 	.string "will take those jobs straight to your\n"
-	.asciz "#CGMailbox#R."
+	.string "#CGMailbox#R.\0"
 	.align 2, 0
 
 gUnknown_80E1B88:: @ 80E1B88
@@ -186,7 +186,7 @@ gUnknown_80E1B88:: @ 80E1B88
 	.string "far-away places.#P"
 	.string " You can apply for Friend\n"
 	.string "Rescue jobs at the #CGleft counter#R of\n"
-	.asciz "that counter there."
+	.string "that counter there.\0"
 	.align 2, 0
 
 gUnknown_80E1D84:: @ 80E1D84
@@ -200,8 +200,8 @@ gUnknown_80E1D84:: @ 80E1D84
 	.string "you won~27t be able to receive more mail.\n"
 	.string "That~27s why you~27ll need to delete old mail.#P"
 	.string " You can look through old\n"
-	.asciz "mail at the #CGleft counter#R over there."
+	.string "mail at the #CGleft counter#R over there.\0"
 	.align 2, 0
 
-	.asciz "pksdir0"
+	.string "pksdir0\0"
 	.align 2, 0

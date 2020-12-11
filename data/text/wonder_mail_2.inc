@@ -1,64 +1,64 @@
 gUnknown_80DEF04:: @ 80DEF04
 	.string " ...Oh?\n"
-	.asciz "Something~27s gone wrong."
+	.string "Something~27s gone wrong.\0"
 	.align 2, 0
 
 gUnknown_80DEF28:: @ 80DEF28
 	.string " ...Oh? The number of linked\n"
 	.string "GBA systems is incorrect.\n"
-	.asciz "Please try again from the start."
+	.string "Please try again from the start.\0"
 	.align 2, 0
 
 gUnknown_80DEF80:: @ 80DEF80
 	.string " ...Oh? It looks like your\n"
 	.string "friend chose a different mode.\n"
-	.asciz "Please try again from the start."
+	.string "Please try again from the start.\0"
 	.align 2, 0
 
 gUnknown_80DEFDC:: @ 80DEFDC
 	.string " ...Oh? It looks like your\n"
 	.string "storage space is full. Please clear some\n"
-	.asciz "space and try again from the start."
+	.string "space and try again from the start.\0"
 	.align 2, 0
 
 gUnknown_80DF044:: @ 80DF044
 	.string " ...Oh?\n"
 	.string "I think you~27ve received this mail before.\n"
-	.asciz "You can~27t get the same mail twice."
+	.string "You can~27t get the same mail twice.\0"
 	.align 2, 0
 
 gUnknown_80DF0A0:: @ 80DF0A0
 	.string " ...Oh?\n"
 	.string "I don~27t think you~27re eligible to receive\n"
-	.asciz "this mail."
+	.string "this mail.\0"
 	.align 2, 0
 
 gUnknown_80DF0E0:: @ 80DF0E0
 	.string " ...Oh?\n"
 	.string "There is no room to receive new mail.\n"
-	.asciz "Please delete some mail and try again."
+	.string "Please delete some mail and try again.\0"
 	.align 2, 0
 
 gUnknown_80DF138:: @ 80DF138
 	.string " ...Oh? Your friend didn~27t\n"
 	.string "follow through on their side.\n"
-	.asciz "Please try again from the start."
+	.string "Please try again from the start.\0"
 	.align 2, 0
 
 gUnknown_80DF194:: @ 80DF194
 	.string " Your #CGThank-You Mail#R\n"
-	.asciz "has been sent."
+	.string "has been sent.\0"
 	.align 2, 0
 
 gUnknown_80DF1C0:: @ 80DF1C0
 	.string " ...Oh?\n"
 	.string "This password appears to be wrong.\n"
-	.asciz "Would you like to try again?"
+	.string "Would you like to try again?\0"
 	.align 2, 0
 
 gUnknown_80DF208:: @ 80DF208
 	.string " ...Oh? This password doesn~27t\n"
-	.asciz "appear to be for a #CGThank-You Mail#R."
+	.string "appear to be for a #CGThank-You Mail#R.\0"
 	.align 2, 0
 
 gUnknown_80DF250:: @ 80DF250
@@ -67,40 +67,40 @@ gUnknown_80DF250:: @ 80DF250
 	.string ": Oh~2c hi~2c #CN%s#R.\n"
 	.string "I~27ve been waiting for you. You wanted me\n"
 	.string "to process a #CGThank-You Mail#R?#P"
-	.asciz ": Let me get on it right away."
+	.string ": Let me get on it right away.\0"
 	.align 2, 0
 
 gUnknown_80DF304:: @ 80DF304
 	.string " Is it OK to send this\n"
-	.asciz "#CGThank-You Mail#R?"
+	.string "#CGThank-You Mail#R?\0"
 	.align 2, 0
 
 gUnknown_80DF330:: @ 80DF330
 	.string " Please choose the\n"
 	.string "#CGThank-You Mail#R that you want to\n"
-	.asciz "send to your friend."
+	.string "send to your friend.\0"
 	.align 2, 0
 
 gUnknown_80DF380:: @ 80DF380
 	.string " OK. Please enter the\n"
-	.asciz "#CGThank-You Mail password#R."
+	.string "#CGThank-You Mail password#R.\0"
 	.align 2, 0
 
 gUnknown_80DF3B4:: @ 80DF3B4
 	.string " Please give this password\n"
 	.string "to the friend that rescued your team.#P"
 	.string " I also must save your\n"
-	.asciz "adventure."
+	.string "adventure.\0"
 	.align 2, 0
 
 gUnknown_80DF418:: @ 80DF418
 	.string " OK~2c here is your\n"
-	.asciz "#CGThank-You Mail password#R."
+	.string "#CGThank-You Mail password#R.\0"
 	.align 2, 0
 
 gUnknown_80DF44C:: @ 80DF44C
 	.string " I need to save your\n"
-	.asciz "adventure."
+	.string "adventure.\0"
 	.align 2, 0
 
 gUnknown_80DF46C:: @ 80DF46C
@@ -108,13 +108,13 @@ gUnknown_80DF46C:: @ 80DF46C
 	.string "I~27m all done.#P"
 	.string " Doesn~27t it feel great to\n"
 	.string "be appreciated for doing something good?\n"
-	.asciz "Please keep up your rescue work!"
+	.string "Please keep up your rescue work!\0"
 	.align 2, 0
 
 gUnknown_80DF4F4:: @ 80DF4F4
 	.string " A #CGThank-You Mail#R has\n"
 	.string "arrived from your friend for your rescue\n"
-	.asciz "mission."
+	.string "mission.\0"
 	.align 2, 0
 
 gUnknown_80DF544:: @ 80DF544
@@ -126,46 +126,46 @@ gUnknown_80DF544:: @ 80DF544
 gUnknown_80DF594:: @ 80DF594
 	.string " There. I~27ve sent your\n"
 	.string "#CGThank-You Mail#R.\n"
-	.asciz "I need to save your adventure."
+	.string "I need to save your adventure.\0"
 	.align 2, 0
 
 gUnknown_80DF5E4:: @ 80DF5E4
 	.string " Please connect the GBA\n"
 	.string "systems with a #CGGame Link cable#R.\n"
-	.asciz "Is your friend also ready?"
+	.string "Is your friend also ready?\0"
 	.align 2, 0
 
 gUnknown_80DF63C:: @ 80DF63C
 	.string " There~2c all done.\n"
 	.string "#CN%s#R~2c I hope your friend\n"
-	.asciz "appreciates your sense of gratitude."
+	.string "appreciates your sense of gratitude.\0"
 	.align 2, 0
 
 gUnknown_80DF694:: @ 80DF694
 	.string " The item you~27ve chosen\n"
 	.string "here can~27t be exchanged later.\n"
-	.asciz "Are you certain this item is OK?"
+	.string "Are you certain this item is OK?\0"
 	.align 2, 0
 
 gUnknown_80DF6F0:: @ 80DF6F0
-	.asciz " I~27ve saved your adventure. "
+	.string " I~27ve saved your adventure. \0"
 	.align 2, 0
 
 gUnknown_80DF710:: @ 80DF710
 	.string " OK~2c please choose\n"
-	.asciz "the item to be sent."
+	.string "the item to be sent.\0"
 	.align 2, 0
 
 gUnknown_80DF73C:: @ 80DF73C
 	.string " ...Oh?\n"
 	.string "Your storage space is empty.\n"
-	.asciz "What would you like to do?"
+	.string "What would you like to do?\0"
 	.align 2, 0
 
 gUnknown_80DF77C:: @ 80DF77C
 	.string " Would you like to choose\n"
 	.string "a #CGreward item#R from storage and\n"
-	.asciz "send it with your mail?"
+	.string "send it with your mail?\0"
 	.align 2, 0
 
 gUnknown_80DF7D4:: @ 80DF7D4
@@ -174,49 +174,49 @@ gUnknown_80DF7D4:: @ 80DF7D4
 	.string "to this mail.#P"
 	.string " I~27m sorry~2c but once an item\n"
 	.string "has been attached to mail~2c it can~27t be\n"
-	.asciz "exchanged."
+	.string "exchanged.\0"
 	.align 2, 0
 
 gUnknown_80DF870:: @ 80DF870
 	.string " Would you like to send it\n"
-	.asciz "again with the item you chose before?"
+	.string "again with the item you chose before?\0"
 	.align 2, 0
 
 gUnknown_80DF8B4:: @ 80DF8B4
 	.string " ...Oh?\n"
-	.asciz "You don~27t seem to have a #CGThank-You Mail#R."
+	.string "You don~27t seem to have a #CGThank-You Mail#R.\0"
 	.align 2, 0
 
 gUnknown_80DF8EC:: @ 80DF8EC
 	.string " Hello.\n"
 	.string "I handle #CGThank-You Mail#R.\n"
-	.asciz "How may I serve you?"
+	.string "How may I serve you?\0"
 	.align 2, 0
 
 gUnknown_80DF928:: @ 80DF928
 	.string " May I help you with\n"
-	.asciz "anything else?"
+	.string "anything else?\0"
 	.align 2, 0
 
 gUnknown_80DF94C:: @ 80DF94C
 	.string " Please come see me\n"
-	.asciz "anytime."
+	.string "anytime.\0"
 	.align 2, 0
 
 gUnknown_80DF96C:: @ 80DF96C
 	.string " How would you like to send\n"
-	.asciz "your #CGThank-You Mail#R?"
+	.string "your #CGThank-You Mail#R?\0"
 	.align 2, 0
 
 gUnknown_80DF9A4:: @ 80DF9A4
 	.string " How would you like to\n"
-	.asciz "receive your friend~27s #CGThank-You Mail#R?"
+	.string "receive your friend~27s #CGThank-You Mail#R?\0"
 
-	.asciz "pksdir0"
+	.string "pksdir0\0"
 	.align 2, 0
 
 gUnknown_80DF9F0:: @ 80DF9F0
-	.asciz "????"
+	.string "????\0"
 	.align 2, 0
 
 gUnknown_80DF9F8:: @ 80DF9F8
@@ -225,7 +225,7 @@ gUnknown_80DF9F8:: @ 80DF9F8
 	.string "I wouldn~27t expect any less~2c #CG%s#R!#P"
 	.string " Well~2c well!\n"
 	.string "Here is your reward from the Pokémon\n"
-	.asciz "Rescue Organization!"
+	.string "Rescue Organization!\0"
 	.align 2, 0
 
 gUnknown_80DFAA8:: @ 80DFAA8
@@ -233,7 +233,7 @@ gUnknown_80DFAA8:: @ 80DFAA8
 	.string "rescuing your friends in\n"
 	.string "dire straits.#P"
 	.string " And now~2c I must save\n"
-	.asciz "your adventure."
+	.string "your adventure.\0"
 	.align 2, 0
 
 gUnknown_80DFB14:: @ 80DFB14
@@ -241,8 +241,8 @@ gUnknown_80DFB14:: @ 80DFB14
 	.string "Please don~27t forget to send an #CGA-OK Mail#R\n"
 	.string "to the friend you just rescued.#P"
 	.string " Please give me a shout if\n"
-	.asciz "you would like to send #CGA-OK Mail#R."
+	.string "you would like to send #CGA-OK Mail#R.\0"
 	.align 2, 0
 
-	.asciz "pksdir0"
+	.string "pksdir0\0"
 	.align 2, 0
