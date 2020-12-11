@@ -1807,8 +1807,8 @@ gUnknown_80F7AFC: @ 80F7AFC
 gUnknown_80F7B04: @ 80F7B04
 	.incbin "baserom.gba", 0xF7B04, 0x10
 
-	.global gUnknown_80F7B14
-gUnknown_80F7B14: @ 80F7B14
+	.global gActions
+gActions: @ 80F7B14
 	.4byte gUseDescription
 	.4byte gUseText
 	.4byte gThrowDescription
