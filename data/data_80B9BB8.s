@@ -1601,12 +1601,8 @@ gUnknown_80DC37C: @ 80DC37C
 
 	.global gUnknown_80DC394
 gUnknown_80DC394: @ 80DC394
-        .byte 0x84, 0x86, 0x2b, 0x87
-        .string "R: Shift moves\n"
-        .byte 0x84, 0x86, 0x2b, 0x87
-        .string "P: Switch link  "
-        .byte 0x87, 0x72, 0x87, 0x73
-        .string " Set\0"
+        .string "{R_BUTTON}+{DPAD}: Shift moves\n"
+        .string "{R_BUTTON}+{A_BUTTON}: Switch link  {SELECT_BUTTON} Set\0"
 
 	.global gUnknown_80DC3C4
 gUnknown_80DC3C4: @ 80DC3C4

@@ -29,10 +29,9 @@ gUnknown_80F42A8: @ 80F42A8
 
 	.global gUnknown_80F42C0
 gUnknown_80F42C0: @ 80F42C0
-	.string "Pokémon"
-        .byte 0
-        .string "pksdir0\0"
-        .align 2,0
+	.string "Pokémon\0"
+	.string "pksdir0\0"
+	.align 2,0
 
 	.global gUnknown_80F42D0
 gUnknown_80F42D0: @ 80F42D0
@@ -1893,7 +1892,7 @@ gEquipDescription: @ 80F7C04
 
 	.global gThrowText
 gThrowText: @ 80F7C1C
-	.string "Throw"
+	.string "Throw\0"
 	.align 2,0
 
 	.global gThrowDescription

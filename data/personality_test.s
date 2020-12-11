@@ -188,8 +188,8 @@
     .string "You~27re going bungee jumping for the first\n"
     .string "time.#PSince it~27s scary~2c you decide to test the\n"
     .string "jump with a doll...#W\n"
-    .string "And the bungee cord snaps!"
-    .string "#PWill you still try to make a jump anyway?\0"
+    .string "And the bungee cord snaps!#P"
+    .string "Will you still try to make a jump anyway?\0"
     .align 2,0
 
     @ Question 2, Category 3 (Brave)
@@ -1210,9 +1210,8 @@ gUnknown_80F275C: @ 80F275C
 
         .global BoyText
         BoyText:
-        .string "Boy."
+        .string "Boy.\0"
 
-        .byte 0x00
         .byte 0x01
         .byte 0x02
         .byte 0x03
@@ -1260,8 +1259,7 @@ gStarters: @ 80F278E
 	.global gStarterReveal
 gStarterReveal: @ 80F27C4
         .string "\n"
-        .string "#+The Pokémon $m0!"
-        .byte 0
+        .string "#+The Pokémon $m0!\0"
         .4byte gStarterReveal
 
 	.global gUnknown_80F27DC
@@ -1560,5 +1558,5 @@ gPersonalityTypeDescriptionTable: @ 80F28F4
         .string "#+point of even feuding with friends...#P"
         .string "#+Nothing will go right for you when you~27re\n"
         .string "#+irritated~2c so learn to laugh it off.#P"
-        .string "#+A hardy person like you should be..."
+        .string "#+A hardy person like you should be...\0"
         .align 2,0
