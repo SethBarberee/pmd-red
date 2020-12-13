@@ -621,7 +621,7 @@ _08029484:
 	bl sub_8028B04
 	b _0802951C
 	.align 2, 0
-_080294B4: .4byte gUnknown_80DEC70
+_080294B4: .4byte gWonderMailPasswordIncorrectText
 _080294B8: .4byte gUnknown_80DDA48
 _080294BC: .4byte gUnknown_203B2C0
 _080294C0:
@@ -644,7 +644,7 @@ _080294CA:
 	bl sub_8028B04
 	b _0802951C
 	.align 2, 0
-_080294E4: .4byte gUnknown_80DEAB4
+_080294E4: .4byte gWonderMailDuplicateText
 _080294E8: .4byte gUnknown_203B2C0
 _080294EC: .4byte 0x0000010d
 _080294F0:
