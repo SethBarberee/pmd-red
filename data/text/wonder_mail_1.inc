@@ -299,12 +299,12 @@ gWonderMailPasswordIncorrectText:: @ 80DEC70
 	.string "Do you want to try that again?\0"
 	.align 2, 0
 
-gUnknown_80DECC0:: @ 80DECC0
+gWonderMailSOSPasswordIncorrectText:: @ 80DECC0
 	.string " ...Uh~2c no? This password~27s\n"
 	.string "not for any #CGSOS Mail#R.\0"
 	.align 2, 0
 
-gUnknown_80DECFC:: @ 80DECFC
+gWonderMailAOKMailReceivedText:: @ 80DECFC
 	.string ": I received the #CGSOS Mail#R.\n"
 	.string "Your adventure will be saved.\0"
 	.align 2, 0
