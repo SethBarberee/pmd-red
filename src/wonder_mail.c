@@ -38,6 +38,21 @@ struct unkStruct_8095228
     s8 unk30;
 };
 
+struct unkStruct_80293F4
+{
+    // size of 0x44
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 *unkC;
+    u32 unk10;
+    u8 unk14[0xA]; // very unsure about this one
+    u32 unk20;
+    u32 unk24;
+    u32 padding[7];
+};
+
+
 extern struct WonderMailStruct_203B2C0 *gUnknown_203B2C0;
 
 extern u32 sub_80144A4(s32 *r0);
@@ -64,13 +79,17 @@ extern u32 gWonderMailDuplicateText;
 extern u32 gWonderMailNotEligibleReceiveText;
 extern u32 gWonderMailNoRoomText;
 extern u32 gWonderMailFriendErrorText;
+extern u32 gWonderMailPasswordIncorrectText;
+extern u32 gWonderMailSOSPasswordIncorrectText;
+extern u32 gWonderMailDuplicateText;
+extern u32 gWonderMailAOKMailReceivedText;
 
 extern s32 sub_8095190(void);
 extern u32 sub_8095324(u32);
 extern void sub_80141B4(u32 *r0, u32, u32 *r1, u32);
 extern void nullsub_130(void);
 extern void sub_8028348(void);
-extern void sub_800641C(u32 *r0, u32, u32);
+extern void sub_800641C(void *r0, u8, u8);
 extern void sub_8004914();
 extern void sub_803084C();
 extern u32 sub_8030768(u32);
@@ -84,13 +103,22 @@ extern void sub_8013114(u32 *r0, u32 *r1);
 extern void sub_8035CF4(u32 *r0, u32, u32);
 extern u32 sub_8030DA0(void);
 extern void sub_8030DE4(void);
-extern void sub_800641C(u32 *r0, u32, u32);
 extern void sub_803092C(void);
 extern void sub_8011C28(u32);
 extern void sub_8012574(u32);
 extern u8 sub_8012600();
 extern u32 sub_8012744();
 extern void sub_8012750();
+
+
+extern u32 sub_80154F0();
+void MemoryFill8(u8 *dest, u8 value, s32 size);
+extern u32 sub_8039068(u32, u32 *r1, u8 *r0);
+extern u32 gUnknown_80DDA48;
+extern void sub_8014248(u32 *r0, u32, u32, u32 *r1);
+extern void sub_8095274(u32);
+extern void sub_80155F0();
+extern void sub_80951BC(u8 *r0);
 
 void sub_8028B04(u32 r0)
 {
@@ -780,4 +808,306 @@ void sub_80293D8(void)
         return;
     }
     sub_8028B04(0x27);
+}
+
+#ifndef NONMATCHING
+NAKED
+#endif
+void sub_80293F4(void)
+{
+#ifdef NONMATCHING
+    u32 return_var;
+    u32 temp_var;
+    struct unkStruct_80293F4 temp;
+    return_var = sub_80154F0();
+    MemoryFill8(temp.unk14, 0, 0x30);
+    switch(return_var)
+    {
+        case 3:
+            return_var = sub_8039068(0x1C, &(gUnknown_203B2C0->unk8), temp.unk14) - 7;
+            if(return_var <= 0x11)
+            {
+                switch(return_var)
+                {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                        break;
+                    case 10:
+                        // TODO one register off from matching
+                        temp.unk0 = 0;
+                        temp.unk4 = 4;
+                        temp.unk8 = 0;
+                        temp.unkC = &(gUnknown_203B2C0->unk420);
+                        temp.unk10 = 0xC;
+                        sub_8014248(&gWonderMailPasswordIncorrectText, 0, 8, &gUnknown_80DDA48);
+                        sub_8028B04(0x28);
+                        break;
+                    case 11:
+                        sub_80141B4(&gWonderMailSOSPasswordIncorrectText, 0, &gUnknown_203B2C0->unk420, 0x10d);
+                        sub_8028B04(7);
+                        break;
+                    case 0:
+                        sub_80141B4(&gWonderMailDuplicateText, 0, &gUnknown_203B2C0->unk420, 0x10d);
+                        sub_8028B04(7);
+                        break;
+                    case 12:
+                    case 13:
+                    case 14:
+                        break;
+                    case 15:
+                        sub_8095274(temp.unk24);
+                        // This one is iffy.. not sure
+                        temp.unk14[0] = 2;
+                        sub_80951BC(temp.unk14);
+                        sub_80141B4(&gWonderMailAOKMailReceivedText, 0, &gUnknown_203B2C0->unk420, 0x101);
+                        sub_8028B04(0x23);
+                        break;
+                    case 16:
+                    case 17:
+                    default:
+                        break;
+                }
+            }
+            sub_80155F0();
+            break;
+        case 2:
+            sub_80155F0();
+            sub_8004914();
+            sub_800641C(&(gUnknown_203B2C0->unk3BC), 1, 1);
+            sub_8028B04(1);
+            break;
+        default:
+            break;
+    }
+#else
+	asm_unified("\tpush {r4,lr}\n"
+	"\tsub sp, 0x44\n"
+	"\tbl sub_80154F0\n"
+	"\tadds r4, r0, 0\n"
+	"\tadd r0, sp, 0x14\n"
+	"\tmovs r1, 0\n"
+	"\tmovs r2, 0x30\n"
+	"\tbl MemoryFill8\n"
+	"\tcmp r4, 0x2\n"
+	"\tbne _0802940E\n"
+	"\tb _08029530\n"
+"_0802940E:\n"
+	"\tcmp r4, 0x3\n"
+	"\tbeq _08029414\n"
+	"\tb _08029550\n"
+"_08029414:\n"
+	"\tldr r0, _08029434\n"
+	"\tldr r1, [r0]\n"
+	"\tadds r1, 0x8\n"
+	"\tmovs r0, 0x1C\n"
+	"\tadd r2, sp, 0x14\n"
+	"\tbl sub_8039068\n"
+	"\tsubs r0, 0x7\n"
+	"\tcmp r0, 0x11\n"
+	"\tbls _0802942A\n"
+	"\tb _0802951C\n"
+"_0802942A:\n"
+	"\tlsls r0, 2\n"
+	"\tldr r1, _08029438\n"
+	"\tadds r0, r1\n"
+	"\tldr r0, [r0]\n"
+	"\tmov pc, r0\n"
+	"\t.align 2, 0\n"
+"_08029434: .4byte gUnknown_203B2C0\n"
+"_08029438: .4byte _0802943C\n"
+	"\t.align 2, 0\n"
+"_0802943C:\n"
+	"\t.4byte _080294C8\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _08029484\n"
+	"\t.4byte _080294C0\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _080294F0\n"
+	"\t.4byte _0802951C\n"
+	"\t.4byte _0802951C\n"
+"_08029484:\n"
+	"\tldr r0, _080294B4\n"
+	"\tldr r3, _080294B8\n"
+	"\tmovs r2, 0\n"
+	"\tstr r2, [sp]\n"
+	"\tmovs r1, 0x4\n"
+	"\tstr r1, [sp, 0x4]\n"
+	"\tstr r2, [sp, 0x8]\n"
+	"\tldr r1, _080294BC\n"
+	"\tldr r1, [r1]\n"
+	"\tmovs r2, 0x84\n"
+	"\tlsls r2, 3\n"
+	"\tadds r1, r2\n"
+	"\tstr r1, [sp, 0xC]\n"
+	"\tmovs r1, 0xC\n"
+	"\tstr r1, [sp, 0x10]\n"
+	"\tmovs r1, 0\n"
+	"\tmovs r2, 0x8\n"
+	"\tbl sub_8014248\n"
+	"\tmovs r0, 0x28\n"
+	"\tbl sub_8028B04\n"
+	"\tb _0802951C\n"
+	"\t.align 2, 0\n"
+"_080294B4: .4byte gWonderMailPasswordIncorrectText\n"
+"_080294B8: .4byte gUnknown_80DDA48\n"
+"_080294BC: .4byte gUnknown_203B2C0\n"
+"_080294C0:\n"
+	"\tldr r0, _080294C4\n"
+	"\tb _080294CA\n"
+	"\t.align 2, 0\n"
+"_080294C4: .4byte gWonderMailSOSPasswordIncorrectText\n"
+"_080294C8:\n"
+	"\tldr r0, _080294E4\n"
+"_080294CA:\n"
+	"\tldr r1, _080294E8\n"
+	"\tldr r2, [r1]\n"
+	"\tmovs r1, 0x84\n"
+	"\tlsls r1, 3\n"
+	"\tadds r2, r1\n"
+	"\tldr r3, _080294EC\n"
+	"\tmovs r1, 0\n"
+	"\tbl sub_80141B4\n"
+	"\tmovs r0, 0x7\n"
+	"\tbl sub_8028B04\n"
+	"\tb _0802951C\n"
+	"\t.align 2, 0\n"
+"_080294E4: .4byte gWonderMailDuplicateText\n"
+"_080294E8: .4byte gUnknown_203B2C0\n"
+"_080294EC: .4byte 0x0000010d\n"
+"_080294F0:\n"
+	"\tldr r0, [sp, 0x24]\n"
+	"\tbl sub_8095274\n"
+	"\tadd r1, sp, 0x14\n"
+	"\tmovs r0, 0x2\n"
+	"\tstrb r0, [r1]\n"
+	"\tadds r0, r1, 0\n"
+	"\tbl sub_80951BC\n"
+	"\tldr r0, _08029524\n"
+	"\tldr r1, _08029528\n"
+	"\tldr r2, [r1]\n"
+	"\tmovs r1, 0x84\n"
+	"\tlsls r1, 3\n"
+	"\tadds r2, r1\n"
+	"\tldr r3, _0802952C\n"
+	"\tmovs r1, 0\n"
+	"\tbl sub_80141B4\n"
+	"\tmovs r0, 0x23\n"
+	"\tbl sub_8028B04\n"
+"_0802951C:\n"
+	"\tbl sub_80155F0\n"
+	"\tb _08029550\n"
+	"\t.align 2, 0\n"
+"_08029524: .4byte gWonderMailAOKMailReceivedText\n"
+"_08029528: .4byte gUnknown_203B2C0\n"
+"_0802952C: .4byte 0x00000101\n"
+"_08029530:\n"
+	"\tbl sub_80155F0\n"
+	"\tbl sub_8004914\n"
+	"\tldr r0, _08029558\n"
+	"\tldr r0, [r0]\n"
+	"\tmovs r2, 0xEF\n"
+	"\tlsls r2, 2\n"
+	"\tadds r0, r2\n"
+	"\tmovs r1, 0x1\n"
+	"\tmovs r2, 0x1\n"
+	"\tbl sub_800641C\n"
+	"\tmovs r0, 0x1\n"
+	"\tbl sub_8028B04\n"
+"_08029550:\n"
+	"\tadd sp, 0x44\n"
+	"\tpop {r4}\n"
+	"\tpop {r0}\n"
+	"\tbx r0\n"
+	"\t.align 2, 0\n"
+"_08029558: .4byte gUnknown_203B2C0\n");
+#endif
+}
+
+void sub_802955C(void)
+{
+    s32 temp;
+    if(sub_80144A4(&temp) != 0)
+    {
+        return;
+    }
+    switch(temp)
+    {
+        case 8:
+            sub_8028B04(0x26);
+            break;
+        case 10:
+            sub_8028B04(1);
+            break;
+    }
+}
+
+void sub_802958C(void)
+{
+    s32 temp;
+    if(sub_80144A4(&temp) != 0)
+    {
+        return;
+    }
+    sub_8028B04(6);
+}
+
+void sub_80295A8(void)
+{
+    s32 temp;
+    if(sub_80144A4(&temp) != 0)
+    {
+        return;
+    }
+    switch(temp)
+    {
+        case 8:
+            sub_8028B04(0x8);
+            break;
+        case 9:
+        case 10:
+            sub_8028B04(1);
+            break;
+
+    }
+}
+
+void sub_80295D8(void)
+{
+    switch(sub_8030768(1))
+    {
+        case 2:
+            sub_803084C();
+            sub_8028B04(1);
+            break;
+        case 3:
+            gUnknown_203B2C0->unk218 = sub_80307EC();
+            sub_8028B04(0x2B);
+            break;
+        case 4:
+            gUnknown_203B2C0->unk0 = 0x2A;
+            gUnknown_203B2C0->unk218 = sub_80307EC();
+            sub_8006518(&(gUnknown_203B2C0->unk3BC));
+            sub_8004914();
+            sub_800641C(0, 1, 1);
+            sub_8030D40(gUnknown_203B2C0->unk218, 0);
+            sub_8028B04(0x2C);
+            break;   
+    }
 }
