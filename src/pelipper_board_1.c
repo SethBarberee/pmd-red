@@ -43,7 +43,7 @@ extern struct WonderMail *GetPelipperBoardSlotInfo(u8);
 extern u8 sub_802C4A4(void);
 extern void sub_8096C80(void);
 extern void sub_8096D24(void);
-extern void sub_8096A78(struct WonderMail*);
+extern void SetMailtoJobSlot(struct WonderMail*);
 extern void ResetPelipperBoardSlot(u8);
 extern void sub_80965F4(void);
 extern void sub_802C2D4(void);
@@ -148,7 +148,7 @@ void sub_802EDBC(void)
                     SetPelipperBoardState(3);
                     break;
                 default:
-                    sub_8096A78(mail);
+                    SetMailtoJobSlot(mail);
                     sub_8096C80();
                     sub_8096D24();
                     if(sub_802C4A4())

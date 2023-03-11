@@ -242,7 +242,7 @@ bool8 sub_8096A08(u8 dungeon, s32 param_2)
   return FALSE;
 }
 
-bool8 sub_8096A78(struct WonderMail *mail)
+bool8 SetMailtoJobSlot(struct WonderMail *mail)
 {
   s32 index;
 

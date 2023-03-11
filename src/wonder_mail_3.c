@@ -143,7 +143,7 @@ extern void sub_8096C80(void);
 extern void sub_8096D24(void);
 extern void sub_80141B4(const u8 *, u32, u32, u32);
 extern u8 *sub_8096DE8(void);
-extern void sub_8096A78(struct unkSubStruct_203B2F8 *);
+extern void SetMailtoJobSlot(struct WonderMail *);
 extern void sub_8014248(const char *text, u32, u32, struct MenuItem *r0, u32, u32, u32, u32, u32);
 struct unkStruct_803B344 *sub_803B344(u8);
 extern void xxx_call_draw_string(u32, u32, const u8 *, u32, u32);
@@ -346,7 +346,7 @@ void sub_802D2A8(void)
         break;
       case 8:
         gUnknown_203B2F8->wonderMailAccepted = TRUE;
-        sub_8096A78(gUnknown_203B2F8->unkC);
+        SetMailtoJobSlot(&gUnknown_203B2F8->unkC->wonderMail);
         sub_8096C80();
         sub_8096D24();
         if (gUnknown_203B2F8->unkC->wonderMail.unk2 == 4) {

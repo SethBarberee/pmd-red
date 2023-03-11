@@ -11,7 +11,7 @@ extern u8 gUnknown_202E5D8[];
 extern u8 gUnknown_202E1C8[];
 extern struct unkStruct_203B318 *gUnknown_203B318;
 
-ALIGNED(4) const u8 gUnknown_80E0744[] = "Dungeons";
+ALIGNED(4) const u8 gMakuhitaDojoDungeonHeader[] = "Dungeons";
 ALIGNED(4) const u8 gUnknown_80E0750[] =  {0x83, 0xC2};
 ALIGNED(4) const u8 gUnknown_80E0754[] = {0x83, 0xC0};
 static const u8 makuhita_dojo_fill[] = "pksdir0";

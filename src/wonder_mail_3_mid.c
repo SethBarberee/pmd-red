@@ -76,7 +76,11 @@ struct unkStruct_203B314
 {
     // size: 0x15C
     s16 unk0[2];
-    u8 fill4[0xB8 - 0x4];
+    u8 fill4[0x5C - 0x4];
+    u8 unk5C[2];
+    u8 fill5E[0x8A - 0x5E];
+    u8 unk8A[2];
+    u8 fill8C[0xB8 - 0x8C];
     u8 unkB8;
     u8 unkB9;
     u8 unkBA;
@@ -143,6 +147,16 @@ extern void sub_80141B4(const u8 *, u32, struct OpenedFile **, u32);
 extern u32 sub_801B60C(u32, u8, u8);
 extern void sub_8092578(u8 *buffer, u8 index, u8 r2);
 void HandleMissionReward(void);
+extern void sub_8008C54(u32);
+extern void sub_80073B8(u32);
+extern void sub_80073E0(u32);
+extern void xxx_call_draw_string(u32, u32, const u8 *, u32, u32);
+extern u8 gMakuhitaDojoDungeonHeader[];
+extern u8 gUnknown_80E0754[];
+extern u8 gUnknown_80E0750[];
+void sub_8012BC4(u32 x, u32 y, s32 n, s32 len, u32 param_5, u32 param_6);
+extern s32 sub_8013800(u32 *, s32);
+const u8 *sub_80974A0(s16 index);
 
 const struct UnkTextStruct2 gUnknown_80E03C4 = {
     0x00, 0x00, 0x00, 0x00,
@@ -569,7 +583,7 @@ void HandleMissionReward(void)
         gUnknown_203B310->nextState = 2;
         break;
     case 2:
-        if (gUnknown_203B310->unk10->friendAreaReward == '\0') {
+        if (gUnknown_203B310->unk10->friendAreaReward == 0) {
             // No friend area reward.. go to item reward
             sub_802F2E8(4);
         }
@@ -841,4 +855,117 @@ void sub_802F974(void)
         MemoryFree(gUnknown_203B314);
         gUnknown_203B314 = NULL;
     }
+}
+
+NAKED
+void sub_802F9C0(void)
+{
+    asm_unified(
+	"\tpush {r4,r5,lr}\n"
+	"\tldr r4, _0802FA44\n"
+	"\tldr r0, [r4]\n"
+	"\tmovs r1, 0xAC\n"
+	"\tlsls r1, 1\n"
+	"\tadds r0, r1\n"
+	"\tmovs r2, 0\n"
+	"\tmovs r1, 0x1\n"
+	"\tstrb r1, [r0]\n"
+	"\tldr r0, [r4]\n"
+	"\tldr r3, _0802FA48\n"
+	"\tadds r0, r3\n"
+	"\tstrb r2, [r0]\n"
+	"\tldr r0, [r4]\n"
+	"\tadds r3, 0x1\n"
+	"\tadds r1, r0, r3\n"
+	"\tmovs r0, 0x8\n"
+	"\tstrb r0, [r1]\n"
+	"\tldr r0, [r4]\n"
+	"\tldr r1, _0802FA4C\n"
+	"\tadds r0, r1\n"
+	"\tstrb r2, [r0]\n"
+	"\tldr r0, [r4]\n"
+	"\tadds r0, 0xD6\n"
+	"\tmovs r2, 0\n"
+	"\tldrsh r0, [r0, r2]\n"
+	"\tmovs r1, 0xC\n"
+	"\tbl sub_80095E4\n"
+	"\tadds r0, 0x2\n"
+	"\tlsls r0, 16\n"
+	"\tldr r3, [r4]\n"
+	"\tadds r5, r3, 0\n"
+	"\tadds r5, 0xF0\n"
+	"\tldr r2, [r5]\n"
+	"\tlsls r1, r2, 1\n"
+	"\tadds r1, r2\n"
+	"\tlsls r1, 3\n"
+	"\tadds r1, r3, r1\n"
+	"\tmovs r2, 0x83\n"
+	"\tlsls r2, 1\n"
+	"\tadds r1, r2\n"
+	"\tasrs r2, r0, 16\n"
+	"\tlsrs r0, 16\n"
+	"\tstrh r0, [r1]\n"
+	"\tldr r1, [r5]\n"
+	"\tlsls r0, r1, 1\n"
+	"\tadds r0, r1\n"
+	"\tlsls r0, 3\n"
+	"\tadds r3, r0\n"
+	"\tadds r2, 0x2\n"
+	"\tmovs r0, 0x84\n"
+	"\tlsls r0, 1\n"
+	"\tadds r3, r0\n"
+	"\tstrh r2, [r3]\n"
+	"\tbl ResetUnusedInputStruct\n"
+	"\tldr r0, [r4]\n"
+	"\tadds r0, 0xF8\n"
+	"\tmovs r1, 0x1\n"
+	"\tmovs r2, 0x1\n"
+	"\tbl sub_800641C\n"
+	"\tpop {r4,r5}\n"
+	"\tpop {r0}\n"
+	"\tbx r0\n"
+	"\t.align 2, 0\n"
+"_0802FA44: .4byte gUnknown_203B314\n"
+"_0802FA48: .4byte 0x00000159\n"
+"_0802FA4C: .4byte 0x0000015b");
+}
+
+
+void sub_802FA50(void)
+{
+  s32 dungeonIndex;
+  const u8 *textPtr;
+  u32 y;
+  u32 y2;
+  s32 index;
+  s32 counter;
+  
+  sub_8008C54(gUnknown_203B314->unkF0);
+  sub_80073B8(gUnknown_203B314->unkF0);
+  xxx_call_draw_string(10,0,gMakuhitaDojoDungeonHeader,gUnknown_203B314->unkF0,0);
+  sub_8012BC4(gUnknown_203B314->unk158[2] * 8 + 4,0,gUnknown_203B314->unkDA + 1,2,7,
+              gUnknown_203B314->unkF0);
+  if (gUnknown_203B314->unkB8 != 0) {
+    for(counter = 0; counter < gUnknown_203B314->unkD6; counter++) {
+        y = sub_8013800(&gUnknown_203B314->unkBC,counter);
+        index = gUnknown_203B314->unkDA * gUnknown_203B314->unkD8 + counter;
+        dungeonIndex = gUnknown_203B314->unk0[index];
+        if (gUnknown_203B314->unk5C[index] != 0) {
+            xxx_call_draw_string(10,y,gUnknown_80E0750,gUnknown_203B314->unkF0,0);
+        }
+        else if (gUnknown_203B314->unk8A[index] != 0) {
+            xxx_call_draw_string(10,y,gUnknown_80E0754,gUnknown_203B314->unkF0,0);
+        }
+        xxx_call_draw_string(0x18,y,sub_80974A0(dungeonIndex),gUnknown_203B314->unkF0,0);
+    }
+  }
+  else {
+    for(counter = 0; counter < gUnknown_203B314->unkD6; counter++) 
+    {
+        y2 = sub_8013800(&gUnknown_203B314->unkBC,counter);
+        textPtr = sub_80974A0(gUnknown_203B314->unk0[gUnknown_203B314->unkDA * gUnknown_203B314->unkD8 + counter]);
+        xxx_call_draw_string(8,y2,textPtr,gUnknown_203B314->unkF0,0);
+    }
+  }
+  sub_80073E0(gUnknown_203B314->unkF0);
 }
