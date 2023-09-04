@@ -80,11 +80,11 @@ static u8 sub_8094528(s16 moveID)
     }
     else
     {
-        return gUnknown_8113080[moveID  - 0x1F4].unk0;
+        return gUnknown_8113080[moveID  - 500].unk0;
     }
 }
 
-void sub_8094558(u32 param_1,u8 *param_2,struct unkDungeonGlobal_unk1CE98_sub *param_3)
+void sub_8094558(u32 param_1,u8 *text,struct unkDungeonGlobal_unk1CE98_sub *param_3)
 {
     int iVar2;
     u8 buffer [200];
@@ -93,7 +93,7 @@ void sub_8094558(u32 param_1,u8 *param_2,struct unkDungeonGlobal_unk1CE98_sub *p
     s32 var;
 
     sub_80073B8(param_1);
-    xxx_format_and_draw(0x10,0,param_2,param_1,0);
+    xxx_format_and_draw(0x10,0,text,param_1,0);
     PrintYellowDungeonNametoBuffer(gAvailablePokemonNames, &param_3->dungeonLocation);
     xxx_format_and_draw(4,0x10,*gUnknown_8113850,param_1,0); // #+Place: $m0
     y = 0x1A;

@@ -4644,7 +4644,7 @@ _08054CD4:
 	adds r1, r5, 0
 	mov r2, r8
 	mov r3, r9
-	bl sub_805815C
+	bl CounterMoveAction 
 	b _080554BA
 _08054CE2:
 	adds r0, r7, 0
@@ -4779,7 +4779,7 @@ _08054DE2:
 	adds r1, r5, 0
 	mov r2, r8
 	mov r3, r9
-	bl sub_805A4FC
+	bl IngrainMoveAction
 	b _080554BA
 _08054DF0:
 	adds r0, r7, 0
@@ -5003,7 +5003,7 @@ _08054FA2:
 	adds r1, r5, 0
 	mov r2, r8
 	mov r3, r9
-	bl sub_8058A54
+	bl MindReaderMoveAction 
 	b _080554BA
 _08054FB0:
 	adds r0, r7, 0
@@ -5145,7 +5145,7 @@ _080550BE:
 	adds r1, r5, 0
 	mov r2, r8
 	mov r3, r9
-	bl sub_8059AB8
+	bl TauntMoveAction 
 	b _080554BA
 _080550CC:
 	adds r0, r7, 0
@@ -5509,7 +5509,7 @@ _08055396:
 	adds r1, r5, 0
 	mov r2, r8
 	mov r3, r9
-	bl sub_8057E50
+	bl MirrorMoveMoveAction 
 	b _080554BA
 _080553A4:
 	adds r0, r7, 0

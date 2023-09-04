@@ -414,7 +414,7 @@ bool8 sub_8059AA8(struct Entity *pokemon, struct Entity *target, struct Move *mo
     return TRUE;
 }
 
-bool8 sub_8059AB8(struct Entity *pokemon, struct Entity *target, struct Move *move, u32 param_4)
+bool8 TauntMoveAction(struct Entity *pokemon, struct Entity *target, struct Move *move, u32 param_4)
 {
     TauntStatusTarget(pokemon, target);
     return TRUE;
@@ -948,7 +948,7 @@ bool8 sub_805A4D4(struct Entity *pokemon, struct Entity *target, struct Move *mo
     return TRUE;
 }
 
-bool8 sub_805A4FC(struct Entity *pokemon, struct Entity *target, struct Move *move, u32 param_4)
+bool8 IngrainMoveAction(struct Entity *pokemon, struct Entity *target, struct Move *move, u32 param_4)
 {
     IngrainedStatusTarget(pokemon, target);
     return TRUE;
@@ -1433,37 +1433,36 @@ bool8 sub_805AECC(struct Entity * pokemon, struct Entity * target, struct Move *
 
 bool8 PresentMoveAction(struct Entity * pokemon, struct Entity * target, struct Move *move, u32 param_4)
 {
-  s32 rand1;
-  s32 rand2;
-  s32 HP;
-  bool8 flag;
+    s32 rand1;
+    s32 rand2;
+    s32 HP;
+    bool8 flag;
 #ifndef NONMATCHING    
-  register struct Move *move_r6 asm("r6");
-  register u32 param_4_r4 asm("r4");
+    register struct Move *move_r6 asm("r6");
+    register u32 param_4_r4 asm("r4");
 #else
-  struct Move *move_r6;
-  u32 param_4_r4;
+    struct Move *move_r6;
+    u32 param_4_r4;
 #endif
 
-  move_r6 = move;
-  param_4_r4 = param_4;
+    move_r6 = move;
+    param_4_r4 = param_4;
 
-  rand1 = DungeonRandInt(100);
-  rand2 = rand1;
-  if (rand1 < 10) {
-    flag = sub_8055864(pokemon,target,move_r6,0x78,param_4_r4) != 0 ? TRUE : FALSE;
-    return flag;
-  }
-  else {
-    if (rand1 < 0x1e) {
-      HP = target->info->maxHPStat;
-      if (HP < 0) {
-        HP = HP + 3;
-      }
-      HealTargetHP(pokemon,target,HP >> 2,0,TRUE);
-      return TRUE;
+    rand1 = DungeonRandInt(100);
+    rand2 = rand1;
+    if (rand1 < 10) {
+        flag = sub_8055864(pokemon,target,move_r6,0x78,param_4_r4) != 0 ? TRUE : FALSE;
+        return flag;
     }
-    if (rand2 > 0x3B) {
+    else if (rand1 < 30) {
+        HP = target->info->maxHPStat;
+        if (HP < 0) {
+            HP = HP + 3;
+        }
+        HealTargetHP(pokemon,target,HP >> 2,0,TRUE);
+        return TRUE;
+    }
+    else if (rand2 > 59) {
         flag = sub_8055864(pokemon,target,move_r6,0x28,param_4_r4) != 0 ? TRUE : FALSE;
         return flag;
     }
@@ -1471,5 +1470,4 @@ bool8 PresentMoveAction(struct Entity * pokemon, struct Entity * target, struct 
         flag = sub_8055864(pokemon,target,move_r6,0x50,param_4_r4) != 0 ? TRUE : FALSE;
         return flag;
     }
-  }
 }

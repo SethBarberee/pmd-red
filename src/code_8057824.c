@@ -683,7 +683,7 @@ bool8 SmokescreenMoveAction(struct Entity *pokemon, struct Entity *target)
     return TRUE;
 }
 
-bool8 sub_8057E50(struct Entity *pokemon, struct Entity *target)
+bool8 MirrorMoveMoveAction(struct Entity *pokemon, struct Entity *target)
 {
     SendThawedMessage(pokemon, target);
     MirrorMoveStatusTarget(pokemon, target);
@@ -828,7 +828,7 @@ bool8 GrudgeMoveAction(struct Entity *pokemon, struct Entity * target)
   return hasGrudge;
 }
 
-bool8 sub_805815C(struct Entity *pokemon, struct Entity *target)
+bool8 CounterMoveAction(struct Entity *pokemon, struct Entity *target)
 {
     CounterStatusTarget(pokemon, target, STATUS_COUNTER);
     return TRUE;
@@ -1275,7 +1275,7 @@ bool8 sub_8058A18(struct Entity *pokemon, struct Entity *target, struct Move *mo
     return flag;
 }
 
-bool8 sub_8058A54(struct Entity *pokemon, struct Entity *target, struct Move *move, u32 param_4)
+bool8 MindReaderMoveAction(struct Entity *pokemon, struct Entity *target, struct Move *move, u32 param_4)
 {
     SureShotStatusTarget(pokemon, target, CalculateStatusTurns(target, gUnknown_80F4EB8, FALSE));
     return TRUE;
