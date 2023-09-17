@@ -67,7 +67,7 @@ u32 RestoreMailInfo(u8 *r0, u32 size)
     {
         RestoreWonderMail(&backup, &gUnknown_203B490->jobSlots[index]);
     }
-    for(index = 0; index < 0x38; index++)
+    for(index = 0; index < NUM_POKEMON_NEWS; index++)
     {
         RestoreIntegerBits(&backup, &temp, 1);
         if(temp & 1)
@@ -112,9 +112,9 @@ u32 SaveMailInfo(u8 *r0, u32 size)
     {
         SaveWonderMail(&backup, &gUnknown_203B490->jobSlots[index]);
     }
-    for(index = 0; index < 0x38; index++)
+    for(index = 0; index < NUM_POKEMON_NEWS; index++)
     {
-        if(gUnknown_203B490->PKMNNewsReceived[index] != 0)
+        if(gUnknown_203B490->PKMNNewsReceived[index])
             temp = -1;
         else
             temp = 0;

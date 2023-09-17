@@ -1150,7 +1150,7 @@ void sub_8032828(void)
             monName = GetMonSpecies(MONSTER_PELIPPER);
             strcpy(gUnknown_203B33C->unk53C.clientName, monName);
             gUnknown_203B33C->unk53C.clientSpecies = 0;
-            gUnknown_203B33C->unk53C.unk16 = 2;
+            gUnknown_203B33C->unk53C.rewardType = ITEM;
             gUnknown_203B33C->unk53C.moneyReward = 0;
             mail = GetMailatIndex(GetMailIndex(6, gUnknown_203B33C->unk420));
             // ABSOLUTELY GENIUS
@@ -1160,8 +1160,8 @@ void sub_8032828(void)
                 gUnknown_203B33C->unk53C.itemRewards[0] = ITEM_NOTHING;
             gUnknown_203B33C->unk53C.quantity = 1;
             gUnknown_203B33C->unk53C.teamRankPtsReward = GetDungeonTeamRankPts(&mail->unk4.dungeon, 0);
-            gUnknown_203B33C->unk53C.itemRewards[1] = 0;
-            gUnknown_203B33C->unk53C.itemRewards[2] = 0;
+            gUnknown_203B33C->unk53C.itemRewards[1] = ITEM_NOTHING;
+            gUnknown_203B33C->unk53C.itemRewards[2] = ITEM_NOTHING;
             gUnknown_203B33C->unk53C.friendAreaReward = 0;
             sub_802F204(&gUnknown_203B33C->unk53C, 0);
             break;

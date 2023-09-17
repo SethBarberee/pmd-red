@@ -8,6 +8,7 @@
 #include "code_80958E8_1.h"
 #include "random.h"
 #include "pokemon.h"
+#include "mailbox_8095F8C.h"
 
 struct unkStruct_8096AF8
 {
@@ -16,15 +17,10 @@ struct unkStruct_8096AF8
     u16 targetSpecies;
 };
 
-extern u8 IsJobSlotEmpty(u8);
-extern bool8 IsValidWonderMail(WonderMail *WonderMailData);
 extern u8 sub_8095E38(WonderMail *, u8, u8, bool8);
-extern void ResetJobSlot(u8);
 extern void sub_8096C80(void);
-extern void sub_8096D24(void);
+extern void SortJobSlots(void);
 extern void sub_80965F4();
-extern void SortPelipperJobs();
-extern WonderMail *GetPelipperBoardSlotInfo(u8);
 u8 sub_8097318(s16 param_1);
 extern bool8 GenerateMailJobInfo(WonderMail *);
 
@@ -310,8 +306,7 @@ void sub_8096AF8(struct unkStruct_8096AF8 *param_1, u8 slotIndex,u8 dungeon)
   }
 }
 
-// Unused
-s16 sub_8096B98(u8 dungeon)
+UNUSED s16 sub_8096B98(u8 dungeon)
 {
   WonderMail *mail;
   s32 index;
@@ -344,7 +339,7 @@ void sub_8096BD0(void)
     }
   }
   sub_8096C80();
-  sub_8096D24();
+  SortJobSlots();
 }
 
 bool8 sub_8096C08(u8 *jobIndex)

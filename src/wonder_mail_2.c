@@ -172,7 +172,7 @@ void sub_802B3E0(void)
         monName = GetMonSpecies(MONSTER_PELIPPER);
         strcpy(gUnknown_203B2C8->unk114.clientName, monName);
         gUnknown_203B2C8->unk114.clientSpecies = MONSTER_PELIPPER;
-        gUnknown_203B2C8->unk114.unk16 = 2;
+        gUnknown_203B2C8->unk114.rewardType = ITEM;
         gUnknown_203B2C8->unk114.moneyReward = 0;
         sub_8097790();
         mail = GetMailatIndex(gUnknown_203B2C8->unk1);

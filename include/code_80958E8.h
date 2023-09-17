@@ -21,10 +21,16 @@ typedef struct unkStruct_203B490
     u8 unk190[0x28];
     u8 unk1B8[0x78];
     subStruct_203B490 unk230[16];
-    /* 0x2F0 */ u8 PKMNNewsReceived[NUM_POKEMON_NEWS];
+    /* 0x2F0 */ bool8 PKMNNewsReceived[NUM_POKEMON_NEWS];
     bool8 unk328;
 } unkStruct_203B490;
 
 extern unkStruct_203B490 *gUnknown_203B490;
+
+void LoadMailInfo(void);
+unkStruct_203B490 *GetMailInfo(void);
+void InitializeMailJobsNews(void);
+bool8 IsValidWonderMail(WonderMail *WonderMailData);
+bool8 ValidateWonderMail(WonderMail *data);
 
 #endif // GUARD_CODE_80958E8_H

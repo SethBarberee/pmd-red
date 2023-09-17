@@ -34,7 +34,6 @@ extern void sub_8014144(void);
 extern void LoadGameOptions(void);
 extern void SetWindowBGColor(void);
 extern void LoadItemParameters(void);
-extern void LoadMailInfo(void);
 extern void sub_800DAAC(void);
 extern void sub_800135C(void);
 extern void xxx_script_related_8001334(u32);

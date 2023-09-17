@@ -13,17 +13,16 @@
 #include "code_80118A4.h"
 #include "code_803B050.h"
 #include "pokemon_mid.h"
+#include "code_80958E8_1.h"
+#include "mailbox_8095F8C.h"
 
-bool8 IsMailSlotEmpty(u8);
 extern s32 CountPelipperBoardSlots(void);
 extern void sub_802C328(void);
 extern void DrawPelipperBoardJobMenu(void);
 extern u8 HasNoPelipperBoardJobs(void);
 
-extern WonderMail *GetPelipperBoardSlotInfo(u32);
 extern void sub_803B35C(WonderMail *, u32 *);
 extern u8 gBulletinBoardText[];
-extern bool8 IsMailinJobSlot(WonderMail *);
 extern void CreateRescueTitle(unkStruct_802C39C *);
 
 struct unkStruct_203B2D8
@@ -56,7 +55,6 @@ extern UnkTextStruct2 gUnknown_80DFC9C;
 
 extern u16 gUnknown_203B2E4;
 
-extern WonderMail *GetMailboxSlotInfo(u8);
 extern u8 gMailboxText[];
 extern u8 gAvailablePokemonNames[];
 

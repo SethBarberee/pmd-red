@@ -120,7 +120,7 @@ struct unk_203B250 *gUnknown_203B250;
 
 extern bool8 HasNoAcceptedJobs(void);
 extern bool8 sub_8024108(u32);
-extern bool8 sub_8096E2C(void);
+extern u8 sub_8096E2C(void);
 extern u32 sub_801DCC4(void);
 extern u32 sub_8027074(void);
 extern void sub_80227B8(PokemonStruct1 *);
@@ -185,7 +185,7 @@ void sub_801D4C0(void)
     loopMax = 0;
     MemoryFill16(gUnknown_203B250->unkA8,0,sizeof(gUnknown_203B250->unkA8));
     if (gUnknown_203B250->currFriendAreaLocation == 0) {
-        if (sub_8096E2C()) {
+        if (sub_8096E2C() != 0) {
             gUnknown_203B250->unk68[loopMax].menuAction = 2;
             gUnknown_203B250->unk68[loopMax].text = gMenuItems;
             if (GetNumberOfFilledInventorySlots() == 0) {
@@ -210,7 +210,7 @@ void sub_801D4C0(void)
     }
     else {
         strcpy(gAvailablePokemonNames,gUnknown_80DBF34);
-        if (sub_8096E2C()) {
+        if (sub_8096E2C() != 0) {
             gUnknown_203B250->unk68[loopMax].text = *gUnknown_80D49A8;
             gUnknown_203B250->unk68[loopMax].menuAction = 5;
             if (sub_8024108(4)) {

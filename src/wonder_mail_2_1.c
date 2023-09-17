@@ -11,6 +11,7 @@
 #include "wonder_mail_2_1.h"
 #include "code_80118A4.h"
 #include "code_80958E8_1.h"
+#include "mailbox_8095F8C.h"
 
 extern struct unkStruct_203B2F0 *gUnknown_203B2F0;
 extern struct unkStruct_203B2E8* gUnknown_203B2E8;
@@ -98,13 +99,11 @@ const u8 gUnknown_80DFDBC[] = "RESCUE EVENT";
 static const u8 wonder_mail_fill1[] = "pksdir0";
 
 extern void sub_802CAA4(void);
-extern u8 IsJobSlotEmpty(u8);
 extern void sub_803B35C(WonderMail *, unkStruct_802C39C *);
 extern void CreateRescueTitle(unkStruct_802C39C *);
 
 extern void sub_802C6DC(void);
 extern void DrawJobListMenu(void);
-extern bool8 IsPelipperBoardSlotEmpty(u8);
 extern void SetJobListState(u32);
 extern void sub_802CC00(void);
 extern void sub_802CC70(void);

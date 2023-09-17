@@ -12,6 +12,8 @@
 
 #include "pelipper_board.h"
 #include "code_80118A4.h"
+#include "mailbox_8095F8C.h"
+#include "code_80958E8_1.h"
 
 EWRAM_DATA_2 struct unkStruct_203B308 *gPelipperBoard = {0};
 
@@ -84,18 +86,14 @@ extern u32 sub_802C898(void);
 extern void sub_802C8F4(void);
 extern u32 sub_802DEE0(void);
 extern void sub_802DF24(void);
-extern WonderMail *GetPelipperBoardSlotInfo(u8);
 extern u8 HasNoPelipperBoardJobs(void);
 extern void sub_8096C80(void);
-extern void sub_8096D24(void);
-extern void AcceptJob(WonderMail*);
-extern void ResetPelipperBoardSlot(u8);
+extern void SortJobSlots(void);
 extern void sub_80965F4(void);
 extern void sub_802C2D4(void);
 extern u32 sub_802C1E4(u32);
 extern u8 sub_802C26C(void);
 extern u8 HasNoAcceptedJobs(void);
-extern bool8 IsMailinJobSlot(WonderMail *mail);
 
 extern u8 *gUnknown_80D4990[];
 extern u8 *gUnknown_80D4970[];
@@ -404,7 +402,7 @@ void sub_802EDBC(void)
                 default:
                     AcceptJob(mail);
                     sub_8096C80();
-                    sub_8096D24();
+                    SortJobSlots();
                     if(HasNoPelipperBoardJobs())
                     {
                         sub_802C2D4();

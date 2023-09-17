@@ -7,10 +7,9 @@
 #include "friend_area.h"
 #include "code_80958E8.h"
 #include "code_80A26CC.h"
+#include "dungeon.h"
 
 bool8 sub_8095E38(WonderMail *mail, u8 dungeon, u32 floor, u8 param_4);
-extern s32 GetDungeonFloorCount(u8);
-extern bool8 sub_809017C(DungeonLocation *);
 
 bool8 GenerateMailJobDungeonInfo(WonderMail *mail)
 {

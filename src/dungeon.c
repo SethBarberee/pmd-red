@@ -80,10 +80,10 @@ s16 GetRandomMovementChance(u8 dungeon)
     return gDungeons[dungeon].randomMovementChance;
 }
 
-bool8 sub_809017C(DungeonLocation* a1) {
+bool8 sub_809017C(DungeonLocation* loc) {
     DungeonLocation location;
     int i;
-    sub_80901D8(&location, a1);
+    sub_80901D8(&location, loc);
     for (i = 0; i < 999 && gUnknown_8107828[i].id != 63; ++i) {
         if (location.id == gUnknown_8107828[i].id &&
             location.floor == gUnknown_8107828[i].floor) {

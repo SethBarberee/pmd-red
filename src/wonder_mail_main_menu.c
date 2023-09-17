@@ -11,6 +11,7 @@
 #include "code_80130A8.h"
 #include "code_801C620.h"
 #include "code_801B3C0.h"
+#include "code_80958E8.h"
 #include "cpu.h"
 #include "code_80118A4.h"
 #include "wonder_mail_3.h"
@@ -141,7 +142,6 @@ extern void sub_802D184();
 
 extern s32 sub_80154F0();
 extern bool8 DecodeWonderMailPassword(u8 *, WonderMail *);
-extern bool8 IsValidWonderMail(WonderMail *WonderMailData);
 
 void PrintWonderMailMainMenuError(u32);
 void HandleWonderMailMainScreen(void);

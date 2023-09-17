@@ -8,6 +8,8 @@
 #include "wonder_mail.h"
 #include "menu_input.h"
 #include "code_80118A4.h"
+#include "code_80958E8_1.h"
+#include "mailbox_8095F8C.h"
 
 EWRAM_DATA_2 struct unkStruct_203B304 *gUnknown_203B304 = {0};
 
@@ -63,8 +65,6 @@ static const u8 mailbox_fill[] = "pksdir0";
 extern u8 *gUnknown_80D4990[];
 extern u8 *gUnknown_80D4970[];
 
-extern bool8 IsMailinJobSlot(WonderMail *mail);
-
 void sub_802E578(void);
 void HandleMailActionMenu(void);
 void HandleMailboxMenu(void);
@@ -97,15 +97,11 @@ extern u32 sub_802C898(void);
 extern void sub_802C8F4(void);
 extern u32 sub_802DEE0(void);
 extern void sub_802DF24(void);
-extern WonderMail *GetMailboxSlotInfo(u8);
 extern u8 HasNoMailinMailbox(void);
 extern u32 sub_802BDEC(u32);
-extern void AcceptJob(WonderMail *);
 extern void sub_8096C80(void);
-extern void sub_8096D24(void);
-extern void ResetMailboxSlot(u8);
+extern void SortJobSlots(void);
 extern void ReceivePKMNNews(u8);
-extern void sub_8096078(void);
 extern void sub_802BEDC(void);
 extern u8 sub_802BE74(void);
 extern u8 HasNoAcceptedJobs(void);
@@ -445,7 +441,7 @@ void HandleMailActionMenu(void)
             PlaySound(0x133);
             AcceptJob(GetMailboxSlotInfo(gUnknown_203B304->mailboxIndex));
             sub_8096C80();
-            sub_8096D24();
+            SortJobSlots();
             ResetMailboxSlot(gUnknown_203B304->mailboxIndex);
             sub_8096078();
             if(HasNoMailinMailbox())

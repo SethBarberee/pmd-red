@@ -129,12 +129,10 @@ extern void sub_802D1B8();
 extern void sub_802D2A8();
 
 
-extern bool8 IsMailinJobSlot(WonderMail *);
 extern u8 sub_8096F50(WonderMail *);
 extern u8 sub_802DAA8(void);
 extern u8 sub_802DADC(void);
 extern u8 *sub_8096DD8(void);
-extern u8 sub_8096C08(u8 *);
 extern void DrawJobListMenu(void);
 extern void sub_803B35C(WonderMail *, unkStruct_802C39C*);
 extern void sub_802DE84(unkStruct_802C39C *);
@@ -144,9 +142,8 @@ extern void sub_802C4C8(u32, u32, u32);
 extern void sub_8097418(u32, u32);
 extern void sub_802D690(void);
 extern void sub_8096C80(void);
-extern void sub_8096D24(void);
+extern void SortJobSlots(void);
 extern u8 *sub_8096DE8(void);
-extern void AcceptJob(unkSubStruct_203B2F8 *);
 unkStruct_803B344 *sub_803B344(u8);
 extern void CreateRescueTitle(unkStruct_802C39C *);
 extern u8 gUnknown_80DFDBC[];
@@ -156,7 +153,6 @@ extern void sub_802CFD0(void);
 extern void sub_802DF24(void);
 extern void SetJobListState(u32);
 extern u32 sub_802DEE0(void);
-extern void ResetJobSlot(u8);
 extern u8 HasNoAcceptedJobs(void);
 u32 sub_802C598(u8 param_1);
 extern void sub_802C688(void);
@@ -173,8 +169,6 @@ extern u8 *gUnknown_80D494C[];
 extern u8 *gUnknown_80D4970[];
 extern u8 gUnknown_80DFD70[];
 extern u8 gUnknown_80DFD7C[];
-
-extern bool8 sub_809693C(WonderMail *);
 
 void sub_802CAA4(void) {
     s32 loopMax;
@@ -672,9 +666,9 @@ void sub_802D2A8(void)
         break;
       case RECEIVE_WONDER_MAIL:
         gUnknown_203B2F8->wonderMailAccepted = TRUE;
-        AcceptJob(gUnknown_203B2F8->mail);
+        AcceptJob(&gUnknown_203B2F8->mail->wonderMail);
         sub_8096C80();
-        sub_8096D24();
+        SortJobSlots();
         if (gUnknown_203B2F8->mail->wonderMail.unk2 == 4) {
           MemoryCopy8(sub_8096DD8(),gUnknown_203B2F8->mail->unk14,0x28);
           MemoryCopy8(sub_8096DE8(),gUnknown_203B2F8->mail->unk18,0x78);

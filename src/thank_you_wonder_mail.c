@@ -1385,7 +1385,7 @@ void UpdateThankYouMailText(void)
         monName = GetMonSpecies(MONSTER_PELIPPER);
         strcpy(gUnknown_203B2C4->unk53C.clientName,monName); // 0x53C
         gUnknown_203B2C4->unk53C.clientSpecies = MONSTER_PELIPPER; // 0x550
-        gUnknown_203B2C4->unk53C.unk16 = 2; // 0x552
+        gUnknown_203B2C4->unk53C.rewardType = ITEM; // 0x552
         gUnknown_203B2C4->unk53C.moneyReward = 0; // 0x554
         mailIndex = GetMailIndex(6,gUnknown_203B2C4->unk430);
         mail = GetMailatIndex(mailIndex);
@@ -1396,8 +1396,8 @@ void UpdateThankYouMailText(void)
             gUnknown_203B2C4->unk53C.itemRewards[0] = ITEM_NOTHING; // unk558
         gUnknown_203B2C4->unk53C.quantity = 1; // unk55B
         gUnknown_203B2C4->unk53C.teamRankPtsReward = GetDungeonTeamRankPts(&mail->unk4.dungeon, 0); // unk560
-        gUnknown_203B2C4->unk53C.itemRewards[1] = 0; // unk559
-        gUnknown_203B2C4->unk53C.itemRewards[2] = 0; // unk55A
+        gUnknown_203B2C4->unk53C.itemRewards[1] = ITEM_NOTHING; // unk559
+        gUnknown_203B2C4->unk53C.itemRewards[2] = ITEM_NOTHING; // unk55A
         gUnknown_203B2C4->unk53C.friendAreaReward = 0; // unk55C
         sub_802F204(&gUnknown_203B2C4->unk53C,0); // unk53C
         break;

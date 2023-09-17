@@ -74,7 +74,7 @@ extern PokemonStruct1 *sub_808D378(void);
 
 s32 sub_8016028(void);
 extern void PrintDungeonLocationtoBuffer(u8 *, void *);
-extern u8 sub_803C1D0(WonderMailSub *, u8);
+extern u8 sub_803C1D0(DungeonLocation *, u8);
 extern u8 *sub_803C1F0(u8);
 void sub_803D414(u8 *, WonderMail *);
 
@@ -174,10 +174,10 @@ void CreateRescueTitle(unkStruct_802C39C *param_1)
         xxx_call_draw_string(0x1d,param_1->y + 0xc,buf_1,param_1->unk0[0],0);
     }
     if (param_1->mailTitleType == 7) {
-        uVar1 = sub_803C1D0(param_1->unk8,0);
+        uVar1 = sub_803C1D0(&param_1->unk8->dungeon,0);
     }
     else {
-        uVar1 = sub_803C1D0(param_1->unk8,param_1->mail->missionType);
+        uVar1 = sub_803C1D0(&param_1->unk8->dungeon, param_1->mail->missionType);
     }
     xxx_call_draw_string(0xb4,param_1->y,sub_803C1F0(uVar1),param_1->unk0[0],0);
 }
@@ -370,10 +370,10 @@ void CreateRescueDescription(unkStruct_802C39C *param_1)
     }
     xxx_call_draw_string(0x44,y,buf_1,param_1->unk0[0],0);
     if (param_1->mailMissionType == MISSION_TYPE_FRIEND_RESCUE) {
-        uVar3 = sub_803C1D0(param_1->unk8, 0);
+        uVar3 = sub_803C1D0(&param_1->unk8->dungeon, 0);
     }
     else {
-        uVar3 = sub_803C1D0(param_1->unk8,param_1->mail->missionType);
+        uVar3 = sub_803C1D0(&param_1->unk8->dungeon,param_1->mail->missionType);
     }
 
     y += 0xC;
