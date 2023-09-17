@@ -1399,7 +1399,7 @@ void UpdateThankYouMailText(void)
         gUnknown_203B2C4->unk53C.itemRewards[1] = ITEM_NOTHING; // unk559
         gUnknown_203B2C4->unk53C.itemRewards[2] = ITEM_NOTHING; // unk55A
         gUnknown_203B2C4->unk53C.friendAreaReward = 0; // unk55C
-        sub_802F204(&gUnknown_203B2C4->unk53C,0); // unk53C
+        sub_802F204(&gUnknown_203B2C4->unk53C, FALSE); // unk53C
         break;
     case COMMUNICATING_THANK_YOU_MAIL:
         // Communicating..

@@ -270,7 +270,7 @@ void sub_802DC9C(void)
         sub_80141B4(gWonderMailClientItemDelivered2,0,&gUnknown_203B2FC->faceFile,0x10d);
         break;
       case 6:
-          sub_802F204(&gUnknown_203B2FC->unk8,1);
+          sub_802F204(&gUnknown_203B2FC->unk8, TRUE);
           break;
       case 7:
       default:

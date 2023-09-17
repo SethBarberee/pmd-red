@@ -222,7 +222,15 @@ typedef struct Dungeon
     u8 unk18217;
     u8 fill18218[0x1821A - 0x18218];
     u8 unk1821A;
-    u8 fill1821B[0x1C578 - 0x1821B];
+    u8 fill1821B[0x1BDD4 - 0x1821B];
+    u8 unk1BDD4[10][0x40];
+    u8 unk1C054[0x1C060 - 0x1C054];
+    s16 unk1C060;
+    s16 unk1C062;
+    u16 unk1C064;
+    u8 fill1C066[0x1C06C - 0x1C066];
+    u32 unk1C06C;
+    u8 fill1C070[0x1C578 - 0x1C070];
     u8 unk1C578;
     u8 fill1C579[0x1C57E - 0x1C579];
     u8 unk1C57E;

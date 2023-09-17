@@ -382,26 +382,26 @@ void CreateRescueDescription(unkStruct_802C39C *param_1)
     y += 0xC;
     xxx_call_draw_string(10,y,gRewardText,param_1->unk0[0],0);
 
-    switch(param_1->rewardType) {
+    switch(param_1->unk18.rewardType) {
         case 0:
-            sprintfStatic(buf_1,gMissionRewardText[param_1->rewardType],param_1->unk30);
+            sprintfStatic(buf_1,gMissionRewardText[param_1->unk18.rewardType],param_1->unk18.moneyReward);
             xxx_call_draw_string(0x44,y,buf_1,param_1->unk0[0],0);
             break;
         case 1:
-            sprintfStatic(buf_1,gMissionRewardText[param_1->rewardType],param_1->unk30);
+            sprintfStatic(buf_1,gMissionRewardText[param_1->unk18.rewardType],param_1->unk18.moneyReward);
             xxx_call_draw_string(0x44,y,buf_1,param_1->unk0[0],0);
             break;
         case 2: // Item
         case 3: // Item + ?
-            BufferItemName(gUnknown_202DE58,param_1->rewardItem,NULL);
-            sprintfStatic(buf_1,gMissionRewardText[param_1->rewardType],gUnknown_202DE58);
+            BufferItemName(gUnknown_202DE58,param_1->unk18.itemRewards[0],NULL);
+            sprintfStatic(buf_1,gMissionRewardText[param_1->unk18.rewardType],gUnknown_202DE58);
             xxx_call_draw_string(0x44,y,buf_1,param_1->unk0[0],0);
             break;
         case 4: // Friend Area
-            xxx_call_draw_string(0x44,y,gMissionRewardText[param_1->rewardType],param_1->unk0[0],0);
+            xxx_call_draw_string(0x44,y,gMissionRewardText[param_1->unk18.rewardType],param_1->unk0[0],0);
             break;
         default: 
-            xxx_call_draw_string(0x44,y,gMissionRewardText[param_1->rewardType],param_1->unk0[0],0);
+            xxx_call_draw_string(0x44,y,gMissionRewardText[param_1->unk18.rewardType],param_1->unk0[0],0);
             break;
     }
 

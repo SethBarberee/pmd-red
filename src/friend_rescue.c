@@ -1163,7 +1163,7 @@ void sub_8032828(void)
             gUnknown_203B33C->unk53C.itemRewards[1] = ITEM_NOTHING;
             gUnknown_203B33C->unk53C.itemRewards[2] = ITEM_NOTHING;
             gUnknown_203B33C->unk53C.friendAreaReward = 0;
-            sub_802F204(&gUnknown_203B33C->unk53C, 0);
+            sub_802F204(&gUnknown_203B33C->unk53C, FALSE);
             break;
         case 0xD:
         case 0x62:

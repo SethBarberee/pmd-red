@@ -275,7 +275,7 @@ void sub_803092C(void)
       local.clientSpecies = mail->clientSpecies;
       local.targetSpecies = mail->clientSpecies;
       local.targetItem = ITEM_NOTHING;
-      local.rewardType = 5;
+      local.unk18.rewardType = 5;
 
       switch(mail->mailType)
       {

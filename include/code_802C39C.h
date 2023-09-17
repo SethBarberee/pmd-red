@@ -13,17 +13,12 @@ typedef struct unkStruct_802C39C
     /* 0x10 */ s16 clientSpecies;
     /* 0x12 */ s16 targetSpecies;
     /* 0x14 */ u8 targetItem;
-    /* 0x15 */ u8 fill15[0x2E - 0x15];
-    /* 0x2E */ u8 rewardType;
-    u8 *unk30;
-    /* 0x34 */ u8 rewardItem;
-    u8 fill35[0x38 - 0x35];
-    /* 0x38 */ u8 unk38[0x40 - 0x38];
-    u8 mailTitleType;
-    u8 mailDescriptionType;
-    u8 mailMissionType;
+    unkStruct_802F204 unk18;
+    /* 0x40 */ u8 mailTitleType;
+    /* 0x41 */ u8 mailDescriptionType;
+    /* 0x42 */ u8 mailMissionType;
     u8 unk43;
-    u8 mailStatus; // mail status (suspend / take job / done)
+    /* 0x44 */ u8 mailStatus; // mail status (suspend / take job / done)
     /* 0x48 */ u32 y;
     /* 0x4C */ u8 *unk4C;
     u8 *unk50;

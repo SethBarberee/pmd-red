@@ -15,6 +15,7 @@
 #include "save_write.h"
 #include "text1.h"
 #include "wonder_mail.h"
+#include "rescue_team_info.h"
 
 struct unkStruct_203B2C8
 {
@@ -37,7 +38,6 @@ struct unkStruct_203B2C8
 
 extern struct unkStruct_203B2C8 *gUnknown_203B2C8;
 
-extern void sub_80920D8(u8 *buffer);
 extern char gUnknown_202E5D8[0x50];
 extern char gAvailablePokemonNames[0x50];
 extern u32 sub_802F298(void);
@@ -182,7 +182,7 @@ void sub_802B3E0(void)
         gUnknown_203B2C8->unk114.itemRewards[2] = ITEM_NOTHING;
         gUnknown_203B2C8->unk114.quantity = 10;
         gUnknown_203B2C8->unk114.friendAreaReward = 0;
-        sub_802F204(&gUnknown_203B2C8->unk114, 0);
+        sub_802F204(&gUnknown_203B2C8->unk114, FALSE);
         break;
       case 2:
         // I hope you will keep on rescuing your friends
