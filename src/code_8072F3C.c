@@ -28,7 +28,7 @@ struct unkStruct_203B314
     u8 unk158[4];
 };
 
-extern struct unkStruct_203B314 *gUnknown_203B314;
+EWRAM_DATA_2 struct unkStruct_203B314 *gUnknown_203B314 = {0};
 
 const UnkTextStruct2 gUnknown_80E06FC = {
     0x00, 0x00, 0x00, 0x00,
