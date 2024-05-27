@@ -2,7 +2,7 @@
 #include "bg_control.h"
 #include "cpu.h"
 
-extern u32 gUnknown_202D800;
+EWRAM_DATA u32 gUnknown_202D800 = {0};
 extern u16 gUnknown_203B0BE[];
 
 void sub_800CDA8(u32 r0)
