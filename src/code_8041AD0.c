@@ -1,4 +1,5 @@
 #include "global.h"
+#include "code_803E668.h"
 #include "math.h"
 #include "code_800E9A8.h"
 #include "code_803E46C.h"
@@ -10,6 +11,7 @@
 #include "dungeon_config.h"
 #include "constants/direction.h"
 #include "constants/status.h"
+#include "constants/trap.h"
 #include "constants/type.h"
 #include "dungeon_pokemon_attributes.h"
 #include "dungeon_util.h"
@@ -50,7 +52,8 @@ extern void sub_803EA10(void);
 extern void sub_8042E98(void);
 extern void sub_800EE5C(u32);
 extern void sub_800EF64(void);
-
+void sub_800EF28(u8 r0);
+u32 sub_800E448(u8, DungeonPos*);
 u32 sub_8041764(unkStruct_80416E0 *param_1, bool8 param_2);
 s32 sub_80416E0(PixelPos *pos, u32 param_2, bool8 param_3);
 
@@ -892,4 +895,56 @@ void sub_8042238(Entity *pokemon, Entity *target)
         PlaySoundEffect(0x157);
     else
         PlaySoundEffect(0x156);
+}
+
+void sub_804225C(Entity *entity, DungeonPos*pos, u8 trapID)
+{
+    s32 iVar3;
+    u32 uVar6;
+    u8 direction;
+    EntityInfo *info;
+    DungeonPos uStack_1c;
+    s32 x, y;
+
+    if (trapID == TRAP_WONDER_TILE)
+        return;
+    if (!sub_803F428(pos))
+        return;
+
+    sub_800EF28(trapID);
+    sub_800EF64();
+    sub_803E708(4,0x42);
+
+
+    x = (((pos->x * 3) << 11));
+    x +=0xC00;
+    uStack_1c.x = x / 256;
+
+    y=(pos->y * 3) << 11;
+    y += 0x1000;
+    uStack_1c.y = y / 256;
+
+    uVar6 = sub_800E448(trapID,&uStack_1c);
+    if (trapID == TRAP_SUMMON_TRAP) {
+        sub_80421C0(0,0x193);
+        sub_803E708(0x28,0x33);
+    }
+    else if (trapID == TRAP_SPIN_TRAP) {
+        info = GetEntInfo(entity);
+        direction = (info->action).direction;
+        for (iVar3 = 0; iVar3 < 1000; iVar3 += 2) {
+            direction = (direction - 1) & DIRECTION_MASK;
+            sub_806CDD4(entity,0,direction);
+            sub_803E708(2,0x33);
+            if (!sub_800E9A8(uVar6)) break;
+        }
+        (info->action).direction = direction & DIRECTION_MASK;
+    }
+    else {
+        sub_803E708(0x28,0x33);
+    }
+    for (iVar3 = 0; iVar3 < 1000; iVar3++) {
+        sub_803E46C(0x42);
+        if (!sub_800E9A8(uVar6)) break;
+    }
 }
